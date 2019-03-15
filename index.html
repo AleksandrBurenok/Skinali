@@ -8,6 +8,7 @@
   <title>Фабрика скинали</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/twentytwenty.css">
 </head>
 
 <body>
@@ -48,7 +49,7 @@
             <a class="navbar__phone" href="tel:+74991234567">+7 499 123-45-67</a>
             <a class="navbar__email navbar__small-text" href="mailto:info@mail.cu">info@mail.cu</a>
           </div>
-          <button class="button-o navbar__button">Получить консультацию</button>
+          <a href="#offer" class="button-o navbar__button">Получить консультацию</a>
         </div>
         <!-- /.navbar-wrap -->
       </div>
@@ -59,7 +60,7 @@
       <div class="container">
         <h1 class="hero__title">Гарантия минимальной цены на скинали</h1>
         <span class="hero__subtitle">от 3 000 р/м<sup>2</sup></span>
-        <button class="button hero__button">Заказать скинали</button>
+        <a href="#offer" class="button hero__button">Заказать скинали</a>
       </div>
       <!-- /.container -->
     </div>
@@ -68,7 +69,7 @@
   <!-- /.header -->
 
   <main>
-    <section class="offer bg-secondary">
+    <section class="offer bg-secondary" id="offer">
       <div class="container">
         <div class="offer__block offer-block offer-block_calc-bg">
           <h2 class="offer__title">Оставьте заявку на расчёт</h2>
@@ -77,13 +78,23 @@
             <div class="form__row">
               <div class="form__group">
                 <label for="" class="form__label">Вид стекла</label>
-                <input type="text" class="input form__input"></div>
+                <input type="hidden" name="type" id="select-type" value="С печатью">
+                <div class="select form__select">
+                  <div class="select_checked">С печатью</div>
+                  <ul class="select__dropdown">
+                    <li class="select__option" data-value="С печатью">С печатью</li>
+                    <li class="select__option" data-value="Без печати">Без печати</li>
+                  </ul>
+                </div>
+              </div>
               <div class="form__group">
                 <label for="" class="form__label">Ширина, см</label>
-                <input type="text" class="input form__input"></div>
+                <input type="number" class="input form__input">
+              </div>
               <div class="form__group">
                 <label for="" class="form__label">Высота, см</label>
-                <input type="text" class="input form__input"></div>
+                <input type="number" class="input form__input">
+              </div>
             </div>
             <div class="form__row form__row-checkbox">
               <div class="form__checkbox">
@@ -474,13 +485,58 @@
       <!-- /.container -->
     </section>
     <!-- /.section steps -->
+    <section class="section before">
+      <div class="container">
+        <h2 class="section-title section__title">До и после</h2>
+        <!-- /.section-title section__title -->
+        <div class="before-slider-wrap">
+            <div class="before-slider">
+                <div class="before-slider__item">
+                  <div class="before-after">
+                    <img src="img/before-slider/sample-before.png" alt="">
+                    <img src="img/before-slider/sample-after.png" alt="">
+                  </div>
+                </div>
+                <!-- /.before-slider__item -->
+                <div class="before-slider__item">
+                    <div class="before-after">
+                        <img src="img/before-slider/sample-before.png" alt="">
+                        <img src="img/before-slider/sample-after.png" alt="">
+                      </div>
+                </div>
+                <!-- /.before-slider__item -->
+                <div class="before-slider__item">
+                    <div class="before-after">
+                        <img src="img/before-slider/sample-before.png" alt="">
+                        <img src="img/before-slider/sample-after.png" alt="">
+                      </div>
+                </div>
+                <!-- /.before-slider__item -->
+
+              </div>
+              <!-- /.before-slider -->
+              <div class="before-slider-arrows">
+                  <button class="arrow arrow-left">
+                    <img src="img/before-slider/left.png" alt="">
+                  </button>
+                  <button class="arrow arrow-right">
+                    <img src="img/before-slider/right.png" alt="">
+                  </button>
+                </div>                
+        </div>
+        <!-- /.before-slider-wrap --> 
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section before -->
     <section class="section reviews">
       <div class="container">
         <h2 class="section-title section__title">Отзывы наших клиентов</h2>
         <!-- /.section-title section__title -->
         <div class="reviews-slider">
           <div class="reviews-slider__item">
-            <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
+            <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников
+              банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
             <!-- /.reviews-slider__text -->
             <img src="img/reviews/review-1.png" alt="" class="reviews-slider__image">
             <span class="reviews-slider__name">Екатерина Иванова <br>Москва</span>
@@ -488,21 +544,23 @@
           </div>
           <!-- /.reviews-slider__item -->
           <div class="reviews-slider__item">
-              <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
-              <!-- /.reviews-slider__text -->
-              <img src="img/reviews/review-2.png" alt="" class="reviews-slider__image">
-              <span class="reviews-slider__name">Екатерина Иванова <br>Москва</span>
-              <!-- /.reviews-slider__name -->
-            </div>
-            <!-- /.reviews-slider__item -->
-            <div class="reviews-slider__item">
-                <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
-                <!-- /.reviews-slider__text -->
-                <img src="img/reviews/review-3.png" alt="" class="reviews-slider__image">
-                <span class="reviews-slider__name">Екатерина Иванова <br>Москва</span>
-                <!-- /.reviews-slider__name -->
-              </div>
-              <!-- /.reviews-slider__item -->
+            <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников
+              банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
+            <!-- /.reviews-slider__text -->
+            <img src="img/reviews/review-2.png" alt="" class="reviews-slider__image">
+            <span class="reviews-slider__name">Екатерина Иванова <br>Москва</span>
+            <!-- /.reviews-slider__name -->
+          </div>
+          <!-- /.reviews-slider__item -->
+          <div class="reviews-slider__item">
+            <div class="reviews-slider__text">Очень часто мы сталкиваемся с недопониманием со стороны сотрудников
+              банка, и иной раз идти не хочется. В очередной раз "навешают лапши на уши" и культурно пошлют...</div>
+            <!-- /.reviews-slider__text -->
+            <img src="img/reviews/review-3.png" alt="" class="reviews-slider__image">
+            <span class="reviews-slider__name">Екатерина Иванова <br>Москва</span>
+            <!-- /.reviews-slider__name -->
+          </div>
+          <!-- /.reviews-slider__item -->
         </div>
         <!-- /.reviews-slider -->
       </div>
@@ -510,99 +568,104 @@
     </section>
     <!-- /.section reviews -->
     <section class="offer">
-        <div class="container">
-          <div class="offer__block offer-block offer-block_price-bg">
-            <h2 class="offer__title">Ищите где дешевле и лучше?</h2>
-            <span class="offer__subtitle">Если у Вас уже есть расчёт от другой фирмы, но Вы хотите цену дешевле, укажите её и мы вам пересчитаем заказ с максимальной скидкой</span>
-            <form action="#" class="form offer__form">
-              <div class="form__row">
-                <div class="form__group">
-                  <input type="text" class="input form__input" placeholder="Ваше имя"></div>
-                <div class="form__group">
-                  <input type="text" class="input form__input" placeholder="Ваш телефон"></div>
-                <div class="form__group">
-                  <input type="text" class="input form__input" placeholder="Ваша цена"></div>
+      <div class="container">
+        <div class="offer__block offer-block offer-block_price-bg">
+          <h2 class="offer__title">Ищите где дешевле и лучше?</h2>
+          <span class="offer__subtitle">Если у Вас уже есть расчёт от другой фирмы, но Вы хотите цену дешевле, укажите
+            её и мы вам пересчитаем заказ с максимальной скидкой</span>
+          <form action="#" class="form offer__form">
+            <div class="form__row">
+              <div class="form__group">
+                <input type="text" class="input form__input" placeholder="Ваше имя"></div>
+              <div class="form__group">
+                <input type="tel" class="input form__input" placeholder="Ваш телефон"></div>
+              <div class="form__group">
+                <input type="text" class="input form__input" placeholder="Ваша цена"></div>
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <input type="submit" class="button form__button form__button_price" value="Получить расчёт со скидкой">
               </div>
-              <div class="form__row">
-                <div class="form__group">
-                  <input type="submit" class="button form__button form__button_price" value="Получить расчёт со скидкой">
-                </div>
-                <div class="form__group">
-                    <span class="form__policy">Ваши данные надёжно защищены. Отправление заявки ни к чему не обязывает.</span>
-                  </div>
+              <div class="form__group">
+                <span class="form__policy">Ваши данные надёжно защищены. Отправление заявки ни к чему не обязывает.</span>
               </div>
-            </form>
-          </div>
-          <!-- /.offer__block offer-block -->
+            </div>
+          </form>
         </div>
-      </section>
-      <!-- /.offer -->
-      <section class="section factory">
-        <div class="container">
-          <h2 class="section-title section__title">О производстве</h2>
-          <!-- /.section-title section__title -->
-          <div class="factory-block">
-            <div class="factory-block__image">
-              <img src="img/factory/factory-image.png" alt="">
-            </div>
-            <!-- /.factory-block__image -->
-            <div class="factory-block__text">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quam quis, quod deleniti laboriosam debitis sit natus, asperiores veritatis consequatur expedita, assumenda quos tenetur. Quas consequuntur alias sapiente aliquam eum.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quam quis, quod deleniti laboriosam debitis sit natus, asperiores veritatis consequatur expedita, assumenda quos tenetur. Quas consequuntur alias sapiente aliquam eum.</p>
-            </div>
-              <!-- /.factory-block__text -->
-          </div>
-          <!-- /.factory-block -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.section factory -->
-      <section class="section contacts">
-        <div class="container">
-          <h2 class="section-title section__title">Контакты</h2>
-          <!-- /.section-title section__title -->
-          <div class="contacts-block">
-            <div class="contacts-block__item">
-              <img src="img/contacts/phone.png" alt="" class="contacts__image">
-              <div class="contacts__text">
-                <a class="contacts__link" href="#">+7 499 123-45-67</a>
-              </div>
-              <!-- /.contacts__text -->
-            </div>
-            <!-- /.contacts-block__item -->
-            <div class="contacts-block__item">
-              <img src="img/contacts/map.png" alt="" class="contacts__image">
-              <div class="contacts__text">
-                <address class="contacts__address">Каширинское шоссе, д. 23, офис 345</address>
-              </div>
-              <!-- /.contacts__text -->
-            </div>
-            <!-- /.contacts-block__item -->
-            <div class="contacts-block__item">
-              <img src="img/contacts/message.png" alt="" class="contacts__image">
-              <div class="contacts__text">
-                <a class="contacts__link" href="#">54041@mail.ru</a>
-              </div>
-              <!-- /.contacts__text -->
-            </div>
-            <!-- /.contacts-block__item -->
-          </div>
-          <!-- /.contacts-block -->
-        </div>
-        <!-- /.container -->
-      </section>
-      <!-- /.section contacts -->
-      <div class="map" id="map">
-          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1uYL5-Px-WyUChzXiHhuAPhajGeh3AKQC" width="100%" height="410"></iframe>
+        <!-- /.offer__block offer-block -->
       </div>
-      <section class="section questions">
-        <div class="container">
-          <div class="questions-block">
-            <h3 class="questions__title">Остались вопросы?</h3>
-            <a href="#" class="questions__link">Задайте их менеджеру</a>
+    </section>
+    <!-- /.offer -->
+    <section class="section factory">
+      <div class="container">
+        <h2 class="section-title section__title">О производстве</h2>
+        <!-- /.section-title section__title -->
+        <div class="factory-block">
+          <div class="factory-block__image">
+            <img src="img/factory/factory-image.png" alt="">
           </div>
+          <!-- /.factory-block__image -->
+          <div class="factory-block__text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quam quis, quod deleniti laboriosam debitis
+              sit natus, asperiores veritatis consequatur expedita, assumenda quos tenetur. Quas consequuntur alias
+              sapiente aliquam eum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quam quis, quod deleniti laboriosam debitis
+              sit natus, asperiores veritatis consequatur expedita, assumenda quos tenetur. Quas consequuntur alias
+              sapiente aliquam eum.</p>
+          </div>
+          <!-- /.factory-block__text -->
         </div>
-      </section>
+        <!-- /.factory-block -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section factory -->
+    <section class="section contacts">
+      <div class="container">
+        <h2 class="section-title section__title">Контакты</h2>
+        <!-- /.section-title section__title -->
+        <div class="contacts-block">
+          <div class="contacts-block__item">
+            <img src="img/contacts/phone.png" alt="" class="contacts__image">
+            <div class="contacts__text">
+              <a class="contacts__link" href="#">+7 499 123-45-67</a>
+            </div>
+            <!-- /.contacts__text -->
+          </div>
+          <!-- /.contacts-block__item -->
+          <div class="contacts-block__item">
+            <img src="img/contacts/map.png" alt="" class="contacts__image">
+            <div class="contacts__text">
+              <address class="contacts__address">Каширинское шоссе, д. 23, офис 345</address>
+            </div>
+            <!-- /.contacts__text -->
+          </div>
+          <!-- /.contacts-block__item -->
+          <div class="contacts-block__item">
+            <img src="img/contacts/message.png" alt="" class="contacts__image">
+            <div class="contacts__text">
+              <a class="contacts__link" href="#">54041@mail.ru</a>
+            </div>
+            <!-- /.contacts__text -->
+          </div>
+          <!-- /.contacts-block__item -->
+        </div>
+        <!-- /.contacts-block -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section contacts -->
+    <div class="map" id="map">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1uYL5-Px-WyUChzXiHhuAPhajGeh3AKQC" width="100%" height="410"></iframe>
+    </div>
+    <section class="section questions">
+      <div class="container">
+        <div class="questions-block">
+          <h3 class="questions__title">Остались вопросы?</h3>
+          <a href="#" class="questions__link">Задайте их менеджеру</a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="footer">
     <div class="container">
@@ -645,6 +708,12 @@
 
   <!-- Widget spikmi -->
   <script type="text/javascript" src="https://spikmi.com/Widget?Id=381"></script>
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="js/jquery.event.move.js"></script>
+  <script src="js/jquery.twentytwenty.js"></script>  
+  <script src="js/slick.min.js"></script>  
+  <script src="js/main.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
 </body>
 
 </html>
