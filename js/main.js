@@ -30,4 +30,14 @@ $(window).load(function () {
     return false;
   });
   $("input[type='tel']").mask("+7 (999) 999-99-99");
+  /* View cart only user need */
+  var reviews = $('.reviews');
+  var reviewsTop = reviews.offset().top;
+  $(window).bind('scroll', function(){
+    var windowTop = $(this).scrollTop();
+    if (windowTop > reviewsTop) {
+      $('#map').html('<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1uYL5-Px-WyUChzXiHhuAPhajGeh3AKQC" width="100%" height="410"></iframe>')
+      $(window).unbind('scroll')
+    }
+  });
 });
